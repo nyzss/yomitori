@@ -62,6 +62,7 @@ const Manga = ({ mangaData, chapterList, author }) => {
       <Head>
         <title>Yomitori | {mangaTitle}</title>
       </Head>
+
       <div className="box">
         <div className="container m-6">
           <div className="columns">
@@ -73,12 +74,12 @@ const Manga = ({ mangaData, chapterList, author }) => {
                 <p className="is-size-6 mt-1">id: {mangaId}</p>
                 <hr />
 
-                <div className="columns is-mobile">
+                <div className="columns">
                   <div className="column">
                     <h3 className="yomitori"> Description:</h3>
                     <p>{mangaDesc}</p>
                   </div>
-                  <div className="column">
+                  <div className="column is-desktop">
                     <p>
                       <span className="yomitori">Author:</span> {authorName}
                     </p>
