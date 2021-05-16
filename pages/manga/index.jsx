@@ -37,8 +37,8 @@ export const getServerSideProps = async (context) => {
 };
 
 const Manga = ({ mangaData, chapterList, author }) => {
-  console.log(mangaData);
-  console.log(" ------ author id ------", author);
+  // console.log(mangaData);
+  // console.log(" ------ author id ------", author);
   //   console.log(chapterList);
 
   const mangaTitle = mangaData.data.attributes.title.en;

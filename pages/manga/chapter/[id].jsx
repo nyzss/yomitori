@@ -24,7 +24,7 @@ export const getServerSideProps = async (context) => {
 const ChapterPage = ({ chapterId, chapterServer, chapterData }) => {
   // console.log(chapterId);
   // console.log(chapterServer);
-  console.log(chapterData);
+  // console.log(chapterData);
 
   const chapterTitle = chapterData.data.attributes.title;
   const chapterNumber = chapterData.data.attributes.chapter;
@@ -33,7 +33,7 @@ const ChapterPage = ({ chapterId, chapterServer, chapterData }) => {
   const chapterImages = chapterData.data.attributes.dataSaver;
 
   // const chapterPage = `${chapterServer}/data-saver/${chapterHash}/${forEachOfThePageName}`;
-  console.log();
+  // console.log();
 
   return (
     <div className="mx-atuo">

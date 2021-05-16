@@ -18,8 +18,8 @@ export const getServerSideProps = async (context) => {
 };
 
 const SearchedMangaTitle = ({ searchedTitle, searchedData }) => {
-  console.log(searchedTitle);
-  console.log(searchedData);
+  // console.log(searchedTitle);
+  // console.log(searchedData);
 
   return (
     <>

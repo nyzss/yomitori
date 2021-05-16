@@ -7,7 +7,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="64x.png" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="https://i.postimg.cc/nzrrwYFK/64x.png"
+          type="image/x-icon"
+        />
         <link
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"

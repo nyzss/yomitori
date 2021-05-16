@@ -14,6 +14,12 @@ const Navbar = () => {
     }
   };
 
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <>
       <nav
@@ -32,6 +38,7 @@ const Navbar = () => {
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            onClick={toggleMenu}
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -39,13 +46,19 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
+        <div
+          id="navbarBasicExample"
+          className={`navbar-menu ${isActive ? "is-active" : ""}`}
+        >
           <div className="navbar-start">
             <Link href="/">
               <a className="navbar-item">Home</a>
             </Link>
             <Link href="/manga/a96676e5-8ae2-425e-b549-7f15dd34a6d8">
               <a className="navbar-item">Manga</a>
+            </Link>
+            <Link href="/login">
+              <a className="navbar-item">MD Read List</a>
             </Link>
           </div>
           <div className="navbar-end">

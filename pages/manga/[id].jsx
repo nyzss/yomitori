@@ -16,11 +16,13 @@ export const getServerSideProps = async (context) => {
 
   let chapterList = chapList.data.results;
 
-  if (chapterList.length > 99) {
-    const chapList2 = await axios.get(
-      `https://api.mangadex.org/chapter?manga=${mangaId}&limit=100&offset=100&translatedLanguage=en`
-    );
-    chapterList = chapList.data.results.concat(chapList2.data.results);
+  if (chapterList) {
+    if (chapterList.length > 99) {
+      const chapList2 = await axios.get(
+        `https://api.mangadex.org/chapter?manga=${mangaId}&limit=100&offset=100&translatedLanguage=en`
+      );
+      chapterList = chapList.data.results.concat(chapList2.data.results);
+    }
   }
 
   const getAuthorId = res.data.relationships.filter(
@@ -46,9 +48,16 @@ export const getServerSideProps = async (context) => {
 const Manga = ({ mangaData, chapterList, author }) => {
   //   console.log(mangaData);
   //   console.log(" ------ author id ------", author);
-  // console.log("chaplist ------------", chapterList.length);
+  console.log("chaplist ------------", chapterList);
 
-  const mangaTitle = mangaData.data.attributes.title.en;
+  let mangaTitle = "";
+
+  if (mangaData.data.attributes.title.en) {
+    mangaTitle = mangaData.data.attributes.title.en;
+  } else {
+    mangaTitle = mangaData.data.attributes.title;
+  }
+
   const mangaType = mangaData.data.type;
   const [mangaDesc, setMangaDesc] = useState(
     mangaData.data.attributes.description.en

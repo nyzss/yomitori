@@ -9,9 +9,9 @@ const ChapterList = ({ id, chapterList }) => {
   const [searchedManga, setSearchedManga] = useState("");
   // const [modalOpen, setModalOpen] = useState(false);
 
-  const handleClick = (id) => {
-    console.log(id);
-  };
+  // const handleClick = (id) => {
+  //   console.log(id);
+  // };
 
   return (
     <div>
