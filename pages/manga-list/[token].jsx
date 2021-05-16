@@ -43,7 +43,7 @@ export const getServerSideProps = async (context) => {
 
 const RenderReadList = ({ token, userData, readList }) => {
   // console.log(userData);
-  console.log(readList);
+  // console.log(readList);
   const username = userData.attributes.username;
   const userId = userData.id;
 

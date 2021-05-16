@@ -22,30 +22,17 @@ export const getServerSideProps = async (context) => {
       "Content-Type": "application/json",
     },
   });
-  //       .then((res) => {
-  //     // console.log(res.data.token.session);
-  //       const token = res.data.token.session;
-  //     //   router.push(`/manga-list/${token}`);
-  //   });
 
   const token = res.data.token.session;
 
   return {
     props: {
-      //   userData: decoded,
-      //   username: username,
-      //   password: password,
       token: token,
     },
   };
 };
 
 const UserData = ({ token }) => {
-  //   console.log(userData);
-  //   console.log(username);
-  //   console.log(password);
-  //   console.log(token);
-
   const router = useRouter();
 
   useEffect(() => {
