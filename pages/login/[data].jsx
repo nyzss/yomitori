@@ -39,12 +39,12 @@ const UserData = ({ token }) => {
 
   console.log(token);
 
-  useEffect(() => {
-    router.push(`/manga-list/${token}`);
+  //   useEffect(() => {
+  //     router.push(`/manga-list/${token}`);
 
-    //   setTimeout(() => {
-    //   }, 1000);
-  }, []);
+  //     //   setTimeout(() => {
+  //     //   }, 1000);
+  //   }, []);
 
   const handleClick = () => {
     router.push(`/manga-list/${token}`);
