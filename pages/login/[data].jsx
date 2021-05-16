@@ -1,7 +1,7 @@
 import Head from "next/head";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export const getServerSideProps = async (context) => {
   const userData = context.params.data;
@@ -35,11 +35,16 @@ export const getServerSideProps = async (context) => {
 const UserData = ({ token }) => {
   const router = useRouter();
 
-  useEffect(() => {
-    setTimeout(() => {
-      router.push(`/manga-list/${token}`);
-    }, 1000);
-  }, []);
+  console.log(token);
+
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //     }, 1000);
+  // }, []);
+
+  const handleClick = () => {
+    router.push(`/manga-list/${token}`);
+  };
 
   return (
     <>
@@ -54,6 +59,9 @@ const UserData = ({ token }) => {
                 <h1>Loading...</h1>
                 <div className="lds-circle my-6">
                   <div></div>
+                  <button className="button is-danger" onClick={handleClick}>
+                    If you're not automatically redirected click here!
+                  </button>
                 </div>
               </div>
             </div>
