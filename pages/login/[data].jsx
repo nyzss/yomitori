@@ -1,7 +1,7 @@
 import Head from "next/head";
 import axios from "axios";
 import { useRouter } from "next/router";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 export const getServerSideProps = async (context) => {
   const userData = context.params.data;
@@ -37,10 +37,12 @@ const UserData = ({ token }) => {
 
   console.log(token);
 
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //     }, 1000);
-  // }, []);
+  useEffect(() => {
+    router.push(`/manga-list/${token}`);
+
+    //   setTimeout(() => {
+    //   }, 1000);
+  }, []);
 
   const handleClick = () => {
     router.push(`/manga-list/${token}`);
@@ -52,16 +54,21 @@ const UserData = ({ token }) => {
         <title>Yomitori | Loading...</title>
       </Head>
       <div className="container m-6">
-        <div className="column is-one-fifth is-offset-5 mt-6">
+        <div className="column is-4 is-offset-5 mt-6">
           <div className="block my-6">
             <div className="has-text-centered mx-0 my-6">
               <div className="box">
-                <h1>Loading...</h1>
-                <div className="lds-circle my-6">
-                  <div></div>
-                  <button className="button is-danger" onClick={handleClick}>
-                    If you're not automatically redirected click here!
-                  </button>
+                <div className="block">
+                  <h1>Loading...</h1>
+                  <div className="lds-circle my-6">
+                    <div></div>
+                    <h3 className="is-size-5">
+                      If you're not automatically redirected
+                    </h3>
+                    <button className="button is-danger" onClick={handleClick}>
+                      Click here!
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
