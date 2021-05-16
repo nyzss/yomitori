@@ -36,7 +36,9 @@ const UserData = ({ token }) => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`/manga-list/${token}`);
+    setTimeout(() => {
+      router.push(`/manga-list/${token}`);
+    }, 1000);
   }, []);
 
   return (
