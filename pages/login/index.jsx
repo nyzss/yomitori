@@ -10,7 +10,10 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-  const encoded = btoa(`${username}<${password}`);
+  const encoded = Buffer.from(`${username}<${password}`, "binary").toString(
+    "base64"
+  );
+  // const encoded = btoa(`${username}<${password}`);
 
   console.log(encoded);
 

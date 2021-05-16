@@ -5,7 +5,9 @@ import { useEffect } from "react";
 
 export const getServerSideProps = async (context) => {
   const userData = context.params.data;
-  const decoded = atob(userData);
+
+  const decoded = Buffer.from(userData, "base64").toString("binary");
+  //   const decoded = atob(userData);
   const getIndexOf = decoded.indexOf("<");
 
   const username = decoded.substring(0, getIndexOf);
