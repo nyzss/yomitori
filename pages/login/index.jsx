@@ -12,29 +12,26 @@ const LoginPage = () => {
   //   let user = {};
   const handleSubmit = (e) => {
     e.preventDefault();
-    // user = {
-    //   username: user.username,
-    //   password: user.password,
-    // };
-    // console.log(user);
 
-    // console.log(username, password);
+    const encoded = btoa(`${username}<${password}`);
 
-    axios({
-      method: "post",
-      url: "https://api.mangadex.org/auth/login",
-      data: {
-        username: username,
-        password: password,
-      },
-      header: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => {
-      // console.log(res.data.token.session);
-      const token = res.data.token.session;
-      router.push(`/manga-list/${token}`);
-    });
+    router.push(`/login/${encoded}`);
+
+    // axios({
+    //   method: "post",
+    //   url: "https://api.mangadex.org/auth/login",
+    //   data: {
+    //     username: username,
+    //     password: password,
+    //   },
+    //   header: {
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((res) => {
+    //   // console.log(res.data.token.session);
+    //   const token = res.data.token.session;
+    //   router.push(`/manga-list/${token}`);
+    // });
   };
 
   return (
